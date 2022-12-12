@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 public class UniLibrary extends AbstarctLibrary{
 
 
-    public void getBook(Book book)
+    public void getBook()
     {
-        System.out.println("Мы берем книгу из UniLibrary:"+book.getName());
+        System.out.println("Мы берем книгу из UniLibrary:");
     }
 
     public void returnBook(){System.out.println("Мы возвращаем книгу из UniLibrary");}
