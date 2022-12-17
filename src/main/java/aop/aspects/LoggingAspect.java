@@ -3,14 +3,38 @@ package aop.aspects;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(10)
+public class LoggingAspect {
 
-    @Pointcut("execution (* aop.UniLibrary.get*())")
+
+
+
+  /*  @Pointcut("execution(* aop.UniLibrary.*(..))")
+    private void AllMethodsFromUniLibrary(){}
+
+    @Pointcut("execution(public void aop.UniLibrary.returnMagazine()) ")
+    private void returnMagazineFromUniLabrary(){}
+
+    @Pointcut("AllMethodsFromUniLibrary() && !returnMagazineFromUniLabrary()")
+    private void AllMethodsExceptReturnMagazineFromUniLibrary() { }
+
+    @Before("AllMethodsExceptReturnMagazineFromUniLibrary()")
+    public void beforeAllMethodsExceptReturnMagazineAdvice()
+    {
+        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice:writing Log #10");
+    }
+
+*/
+
+
+
+   /* @Pointcut("execution (* aop.UniLibrary.get*())")
         private void AllGetMethodsFromUnLibrary() {}
 
     @Before("AllGetMethodsFromUnLibrary()")
@@ -35,38 +59,24 @@ public class LoggingAndSecurityAspect {
     public void beforeGetAndReturnLoggingAdvice()
     {
         System.out.println("beforeGetAndReturnLoggingAdvice:writing Log #3");
-    }
+    }*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-  /*  @Pointcut("execution(*  get*())")
-    private void allGetMethods(){}
 
 
     //@Before("execution(public void aop.UniLibrary.getBook())")
-    @Before("allGetMethods()")
+    @Before("aop.aspects.MyPointcuts.allGetMethods()")
     public  void beforeGetBookAdvice()
     {
-        System.out.println("beforeGetBookAdvice:попытка получить книгу/журнал");
+        System.out.println("beforeGetBookAdvice:логирование попытки получить книгу/журнал");
     }
 
-    @Before("allGetMethods()")
-    public  void beforeGetSecurityAdvice()
-    {
-        System.out.println("beforeGetSecurityAdvice:попытка проверки прав на книгу/журнал");
-    }
 
-*/
+
+
 
 
 
