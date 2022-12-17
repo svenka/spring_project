@@ -1,6 +1,7 @@
 package aop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import spring_introduction.Person;
 
 public class Test1 {
     public static void main(String[] args) {
@@ -8,11 +9,12 @@ public class Test1 {
                 AnnotationConfigApplicationContext(MyConfig.class);
         UniLibrary uniLibrary =context.getBean("uniLibrary", UniLibrary.class);
 
-        //Book book=context.getBean("book",Book.class);
+        Book book=context.getBean("book",Book.class);
 
 
         uniLibrary.getBook();
-        uniLibrary.getMagazine();
+        uniLibrary.addBook("Fyodor",book);
+        uniLibrary.addMagazine();
 
         //uniLibrary.returnMagazine();
 

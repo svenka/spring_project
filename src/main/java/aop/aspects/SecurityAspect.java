@@ -7,12 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(20)
+@Order(30)
 public class SecurityAspect {
 
-    @Before("aop.aspects.MyPointcuts.allGetMethods()")
-    public  void beforeGetSecurityAdvice()
+    @Before("aop.aspects.MyPointcuts.allAddMethods()")
+    public  void beforeAddSecurityAdvice()
     {
-        System.out.println("beforeGetSecurityAdvice:попытка проверки прав на книгу/журнал");
+        System.out.println("beforeAddSecurityAdvice:попытка проверки прав на книгу/журнал");
+        System.out.println("--------------------------------");
     }
 }
