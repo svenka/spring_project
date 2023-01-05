@@ -32,10 +32,12 @@ public class UniLibrary extends AbstarctLibrary{
         System.out.println("Мы берем журнал из UniLibrary");
         System.out.println("--------------------------------");
     }
-    public void returnMagazine()
+    public String returnMagazine()
     {
+        //int a=1/0;
         System.out.println("Мы возвращаем журнал в UniLibrary");
         System.out.println("--------------------------------");
+        return "Silicon Valley news";
     }
 
 
