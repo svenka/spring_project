@@ -1,4 +1,4 @@
-package hibernate_one_to_many_bi.Entity;
+package hibernate_one_to_many_uni.Entity;
 
 
 import jakarta.persistence.*;
@@ -21,9 +21,8 @@ public class Department {
     @Column(name="min_salary")
     private int minSalary;
 
-    @OneToMany(cascade = {CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH},
-            mappedBy = "department",
-    fetch = FetchType.LAZY)
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "department_id")
     private List<Employee> emps;
 
 
@@ -44,7 +43,7 @@ public class Department {
         }
 
             emps.add(employee);
-        employee.setDepartment(this);
+
         System.out.println("Employee is added");
     }
 
