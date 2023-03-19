@@ -17,11 +17,11 @@ public class Test {
 
         Session session=null;
         try{
-            /*session=factory.getCurrentSession();
+            session=factory.getCurrentSession();
             Section section1=new Section("Football");
-            Child child1=new Child("Ivan",7);
-            Child child2=new Child("Zaur",5);
-            Child child3=new Child("Katya",6);
+            Child child1=new Child("Ivanka",7);
+            Child child2=new Child("Zaurka",5);
+            Child child3=new Child("Katyatka",6);
             section1.addChildToSection(child1);
             section1.addChildToSection(child2);
             section1.addChildToSection(child3);
@@ -31,7 +31,7 @@ public class Test {
 
             session.persist(section1);
             session.getTransaction().commit();
-            System.out.println("Done");*/
+            System.out.println("Done");
             /********************************/
 
             /*session=factory.getCurrentSession();
@@ -47,34 +47,34 @@ public class Test {
            *//* section1.addChildToSection(child4);
             section2.addChildToSection(child4);
             section3.addChildToSection(child4);*//*
-
             session.beginTransaction();
-
-
             session.persist(child4);
-
             session.getTransaction().commit();
             System.out.println("Done");*/
             /*************************/
             /*session=factory.getCurrentSession();
-
             session.beginTransaction();
-
             Section section=session.get(Section.class,1);
             System.out.println(section);
             System.out.println(section.getChildren());
             session.getTransaction().commit();
             System.out.println("Done");*/
             /*************************/
-            session=factory.getCurrentSession();
-
+          /*  session=factory.getCurrentSession();
             session.beginTransaction();
-
             Child child=session.get(Child.class,5);
             System.out.println(child);
             System.out.println(child.getSections());
             session.getTransaction().commit();
+            System.out.println("Done");*/
+            /*************************/
+           session=factory.getCurrentSession();
+            session.beginTransaction();
+            Section section=session.get(Section.class,8);
+            session.remove(section);
+            session.getTransaction().commit();
             System.out.println("Done");
+            /*************************/
         }
         finally {
             session.close();
