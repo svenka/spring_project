@@ -47,6 +47,19 @@ public class Child {
 
     }
 
+    public void removeSectionFromChild(Section section)
+    {
+        try {
+            if(sections.isEmpty()==false)
+            sections.remove(section);
+            System.out.println(section.getName()+" Секция удалена от ребенка");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Произошла ошибка:"+e.getMessage());
+        }
+    }
+
     public int getId() {
         return id;
     }
